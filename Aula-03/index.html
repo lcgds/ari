@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>API Canvas</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body onload="desenharBandeira(), desenharHQ()">
+    <main class="container">
+        <h1 class="my-5">API Canvas</h1>
+
+        <h2>Exercício 1</h2>
+        <p>Utilizando a API Canvas, desenhe a bandeira de um país que tenha pelo menos três cores.</p>
+
+        <h3>Bandeira da Irlanda</h3>
+        <canvas id="bandeira" width="600" height="300">Este navegador de internet não é
+            compatível com a API
+            Canvas.</canvas>
+
+        <hr class="my-4">
+
+        <h2>Exercício 2</h2>
+        <p>Usando os recursos da API Canvas, desenhe uma balão de diálogo como aqueles de histórias em quadrinhos.
+            Coloque um texto dentro do balão.</p>
+
+        <canvas id="hq">Este navegador de internet não é
+            compatível com a API
+            Canvas.</canvas>
+    </main>
+</body>
+
+</html>
