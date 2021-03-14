@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SVG</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -15,20 +16,19 @@
 
     <svg width="260" height="110" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <g>
-
             <rect x="0" y="65" width="25" height="35" rx="10" ry="10" fill="#f0a500" />
             <rect x="30" y="40" width="25" height="60" rx="10" ry="10" fill="#f0a500" />
             <rect x="60" y="15" width="25" height="85" rx="10" ry="10" fill="#f0a500" />
 
             <line x1="0" y1="95" x2="85" y2="95" stroke="black" stroke-width="10" />
-
         </g>
+        <g>
+            <text x="103" y="50" font-family="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif"
+                font-weight="bold" font-size="45px" letter-spacing="4">TSI</text>
 
-        <text x="103" y="50" font-family="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" font-weight="bold"
-            font-size="45px" letter-spacing="4">TSI</text>
-
-        <text x="110" y="100" font-family="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" font-weight="bold"
-            font-size="45px" letter-spacing="-2">Invest</text>
+            <text x="110" y="100" font-family="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif"
+                font-weight="bold" font-size="45px" letter-spacing="-2">Invest</text>
+        </g>
     </svg>
 
     <hr style="margin-top: 2rem; margin-bottom: 2ren;">
@@ -36,6 +36,14 @@
     <h2>Exercício 2</h2>
     <p>Usando SVG, crie um gráfico senoidal similar ao da imagem anexa. O gráfico deve mudar de cor ao passar o mouse
         por cima dele.</p>
+    <svg id="grafico" width="500" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 0 50 
+            C 0 50, 50 150, 100 50 
+            C 100 50, 150 -50, 200 50 
+            C 200 50, 250 150, 300 50 
+            C 300 50, 350 -50, 400 50
+            C 400 50, 450 150, 500 50" fill="transparent" stroke="green" stroke-width="5" />
+    </svg>
 
 
 </body>

@@ -1,0 +1,8 @@
+#grafico:hover path {
+    transition: 0.5s;
+    stroke: red!important;
+}
+
+#grafico path {
+    transition: 0.5s;
+}
