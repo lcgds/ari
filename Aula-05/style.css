@@ -1,0 +1,8 @@
+#audio_tag {
+    border: 5px solid #202020;
+    border-radius: 30px;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: #cbc571;
+}

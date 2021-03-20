@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Áudio e Vídeo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <h1>Áudio e Vídeo</h1>
+
+    <h2>Exercício 1</h2>
+    <p>1. Usando CSS, personalize a aparência dos controles de áudio, mude ao menos a cor de fundo e as bordas do controle.</p>
+
+    <audio id="audio_tag" controls="true">
+        <source src="./assets/audio.flac" type="audio/flac">
+        <source src="./assets/audio.mp3" type="audio/mp3">
+        Seu navegador não suporta o player de áudio.
+    </audio>
+
+    <hr>
+
+    <h2>Exercício 2</h2>
+    <p>2. Usando JavaScript, crie uma função que alterna entre dois vídeos ao passar o mouse por cima do próprio elemento video.</p>
+    
+    <video width="560" height="315" id="vid" controls="true" onmouseover="trocaVideo()">
+        <source src="./assets/video1.webm" type="video/webm">
+        <source src="./assets/video1.mp4" type="video/mp4">
+        Seu navegador não suporta o player de vídeo.
+    </video>
+
+</body>
+</html>
