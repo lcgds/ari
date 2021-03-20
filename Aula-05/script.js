@@ -4,7 +4,7 @@ window.addEventListener('load', function() {
 
 
 function trocaVideo() {
-    if(vid.currentSrc == 'http://lcgds.github.io/ari/Aula-05/assets/video1.webm') {
+    if(vid.currentSrc == 'https://lcgds.github.io/ari/Aula-05/assets/video1.webm') {
         vid.src = './assets/video2.webm';
     } else {
         vid.src = './assets/video1.webm';
