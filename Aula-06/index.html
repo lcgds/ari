@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Geolocalização</title>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <h1>Geolocalização</h1>
+
+    <h2>Exercício 1</h2>
+    <p>Crie uma página HTML com um botão para exibir a localização atual do dispositivo em um mapa (usando a API de Geolocalização e o OpenStreetMap).</p>
+
+    <button onclick="verificarLocalizacao()">Gerar localização</button>
+
+    <br><br>
+
+    <a id="linkMap1" target="_blank" href="#">Sua localização</a>
+
+    <hr>
+
+    <h2>Exercício 2</h2>
+    <p>Crie um outro botão e duas caixas de texto que recebem valores de uma coordenada (latitude e longitude). Ao clicar no botão, a página deve exibir esta coordenada em um mapa.</p>
+
+    <input type="text" name="latitude" id="latitude" placeholder="Latitude"> <br><br>
+
+    <input type="text" name="longitudade" id="longitude" placeholder="Longitude"> <br><br>
+    
+    <button onclick="gerarLocalizacao()">Gerar localização</button> <br><br>
+
+    <a id="linkMap2" target="_blank" href="#">Localização gerada</a>
+
+</body>
+</html>
