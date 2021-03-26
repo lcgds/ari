@@ -7,13 +7,17 @@
     <title>Áudio e Vídeo</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-</head>
-<body>
 
-    <h1>Áudio e Vídeo</h1>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<body class="container">
+
+    <h1 class="my-5">Áudio e Vídeo</h1>
 
     <h2>Exercício 1</h2>
-    <p>1. Usando CSS, personalize a aparência dos controles de áudio, mude ao menos a cor de fundo e as bordas do controle.</p>
+    <p>Usando CSS, personalize a aparência dos controles de áudio, mude ao menos a cor de fundo e as bordas do controle.</p>
 
     <audio id="audio_tag" controls="true">
         <source src="./assets/audio.flac" type="audio/flac">
@@ -24,9 +28,9 @@
     <hr>
 
     <h2>Exercício 2</h2>
-    <p>2. Usando JavaScript, crie uma função que alterna entre dois vídeos ao passar o mouse por cima do próprio elemento video.</p>
+    <p>Usando JavaScript, crie uma função que alterna entre dois vídeos ao passar o mouse por cima do próprio elemento video.</p>
     
-    <video width="560" height="315" id="vid" controls="true" onmouseover="trocaVideo()">
+    <video width="696" height="391" id="vid" controls="true" onmouseover="trocaVideo()">
         <source src="./assets/video1.webm" type="video/webm">
         <source src="./assets/video1.mp4" type="video/mp4">
         Seu navegador não suporta o player de vídeo.
