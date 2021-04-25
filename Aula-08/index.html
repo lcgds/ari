@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>APIs de Comunicação</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="./ex1.js"></script>
+</head>
+
+<body>
+    <h1>APIs de Comunicação</h1>
+
+    <section>
+        <h2>Exercício 1</h2>
+        <p>Crie duas páginas HTML. Umas das páginas deve abrir a outra em um iframe e enviar um array com alguns valores. A página que foi aberta no iframe deverá mostrar os itens do array em um elemento select.
+        </p>
+
+        <button style="display: block;" id="ex1_button1" onclick="displayIframe()">Abrir iframe</button>
+
+        <button style="display: none;" id="ex1_button2" onclick="sendMessage()">Enviar lista</button>
+
+        <iframe style="display: none; margin: 1.5rem 0" id="iframe" src="./ex1.html" frameborder="0"></iframe>
+    </section>
+    
+
+    <hr>
+
+    <section>
+        <h2>Exercício 2</h2>
+        <p>Crie uma página HTML contendo um cabeçalho, um parágrafo com um texto explicando o que a página faz, um botão e uma área de texto. Crie um arquivo de texto com algum conteúdo. Ao clicar no botão, carregue o conteúdo do arquivo de texto na área de texto da página usando XMLHttpRequest. Para fazer esse exercício, coloque a página html, o arquivo de texto e o arquivo javascript (se for o caso) em um servidor http para que o XMLHttpRequest consiga carregar o arquivo de texto.
+        </p>
+    </section>
+    
+</body>
+
+</html>
