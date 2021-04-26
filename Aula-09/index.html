@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>API de WebSocket</title>
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        document.addEventListener('load', function() {
+            const mensagem = document.getElementById('mensagem'); 
+            const resposta = document.getElementById('resposta');
+        });
+
+        let socket = new WebSocket('wss://echo.websocket.org');
+        
+        socket.onmessage = function(evento) {
+            resposta.textContent = resposta.textContent + 'RESPOSTA RECEBIDA: ' + evento.data + '.\n\n';
+        }
+
+        socket.onerror = function(evento) {
+            resposta.textContent = resposta.textContent + 'ERRO NA CONEXÃO! \n\n';
+        }
+
+        socket.onclose = function(evento) {
+            resposta.textContent = resposta.textContent + 'CONEXÃO ENCERRADA! \n\n';
+        }
+
+        function conect() {
+            socket.send('Nossa conexão foi iniciada com sucesso');
+        }
+
+        function send() {
+            socket.send(mensagem.value);
+        }
+
+        function end() {
+            socket.close();
+        }
+    </script>
+    <style>
+        textarea {
+            padding: 1rem;
+            background-color: #212121;
+            color: #66bb6a;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>API de WebSocket</h1>
+    <h2>Exercício 1</h2>
+    <p>
+        Crie uma página que se comunica com o servidor websocket ('wss://echo.websocket.org'). A página deve conter botões para abrir/fechar a conexão. Deve conter também uma caixa de texto e um botão para enviar uma mensagem para o servidor. Por fim, a página deve conter uma área de texto para receber e mostrar a mensagem retornada pelo servidor.
+    </p>
+    <hr>
+        <button onclick="conect()">Abrir conexão</button><br><br>
+
+        <input type="text" name="mensagem" id="mensagem" placeholder="Mensagem"><br><br>
+
+        <button onclick="send()">Enviar mensagem</button><br><br>
+
+        <textarea name="resposta" id="resposta" placeholder="Console" cols="40" rows="5" disabled></textarea><br><br>
+
+        <button onclick="end()">Fechar conexão</button>
+    <hr>
+</body>
+</html>
