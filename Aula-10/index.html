@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulários</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        #experiencia_label {
+            display:inline-block!important;
+        }
+
+        span {
+            display: block; 
+            font-size: 11px; 
+            color: red; 
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        label.obrigatorio::before {
+            content: '* ';
+            color: red;
+        }
+
+        input:invalid {
+            border: 2px outset red;
+        }
+    </style>
+
+    <script>
+        function validarEmail() {
+            const email = document.getElementById('email');
+
+            if(email.validity.typeMismatch) {
+                email.setCustomValidity('Corrija o campo e-mail para enviar o formulário.');
+            } else {
+                email.setCustomValidity('');
+            };
+        }
+    </script>
+</head>
+<body>
+    <h1>Formulários</h1>
+    <h2>Exercício 1</h2>
+    <form>
+
+        <label for="nome" class="obrigatorio">Nome</label>
+        <input type="text" id="nome" placeholder="Nome Sobrenome" pattern="[A-Za-z]{2,}\s[A-Za-z]{2,}" title="Digite um nome e um sobrenome" required autofocus>
+        
+        <label for="nascimento" class="obrigatorio">Data de nascimento</label>
+        <input type="date" id="nascimento" required>
+        
+        <label for="email" class="obrigatorio">E-mail</label>
+        <input type="email" id="email" placeholder="nome@email.com" title="nome@email.com" oninput="validarEmail()" required>
+        
+        <label for="genero">Gênero</label>
+        <input list="generos" id="genero" autocomplete>
+        <datalist id="generos">
+            <option value="feminino">Feminino</option>
+            <option value="masculino">Masculino</option>
+        </datalist>
+
+        <label for="tel" class="obrigatorio">Telefone</label>
+        <input type="tel" id="telefone" placeholder="XX XXXXX-XXXX" pattern="[0-9]{2}\s[9]?[0-9]{4}-[0-9]{4}" title="99 99999-9999" required>
+        
+        <label for="linguagem">Linguagem de programação preferida</label>
+        <input list="linguagens" id="linguagem">
+        <datalist id="linguagens">
+            <option value="c#">C#</option>
+            <option value="javascript">JavaScript</option>
+            <option value="php">PHP</option>
+            <option value="python">Python</option>
+            <option value="ruby">Ruby</option>
+        </datalist>
+
+        <label for="experiencia" id="experiencia_label" class="obrigatorio">Nível de experiência: </label> &nbsp; <output id="saida_experiencia">5</output>
+        <input type="range" id="experiencia" min="0" max="10" step="1" value="5" onchange="saida_experiencia.value=value" required>
+
+        <label for="comentarios">Comentários</label>
+        <textarea id="comentarios" cols="30" rows="5"></textarea>
+
+        <span>* Preenchimento obrigatório.</span>
+
+        <input type="submit">
+    </form>
+</body>
+</html>
