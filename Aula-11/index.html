@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Drag and Drop</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        canvas {
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+    </style>
+    <script>
+        function dragStart(event) {
+            console.log("dragStart");
+
+            // Set the drag's format and data. Use the event target's id for the data
+            event.dataTransfer.setData("text/plain", event.target.id);
+        }
+
+        function dragOver (event) {
+            event.currentTarget.style.borderColor = "blue"
+
+            event.preventDefault();
+        }
+
+        function dragLeave (event) {
+            event.currentTarget.style.borderColor = "black"
+
+            event.preventDefault();
+        }
+
+        function drop(event) {
+            console.log("drop");
+
+            event.currentTarget.style.borderColor = "black"
+
+            event.preventDefault();
+
+            // Get the data, which is the id of the drop target
+            let data = event.dataTransfer.getData("text");
+            let img = document.getElementById(data);
+            let ctx = event.target.getContext("2d");
+            
+            ctx.drawImage(img, 50, 50);
+
+            // Clear the drag data cache (for all formats/types)
+            event.dataTransfer.clearData();
+
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <h1>Drag and Drop</h1>
+
+        <h2>Exercício</h2>
+        <p>
+            Crie uma página contendo um canvas e uma imagem em áreas distintas da página. Use a API Drag-and-Drop para permitir que a imagem seja arrastada para dentro do elemento canvas.
+        </p>
+
+        <canvas ondrop="drop(event);" ondragover="dragOver(event);" ondragleave="dragLeave(event);" id="canvas" width="200" height="100"></canvas>
+
+        <hr>
+
+        <img id="img" ondragstart="dragStart(event);" src="https://via.placeholder.com/100x50">
+    </main>
+</body>
+</html>
