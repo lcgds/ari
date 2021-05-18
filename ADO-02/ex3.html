@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ADO 2</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+       .fila {
+            width: 200px;
+            min-height: 200px;
+            box-sizing: content-box;
+            padding: 10px 0 0 15px;
+        }
+
+        .atendimento {
+            background-color: #8bc34a;
+        }
+
+        .espera {
+            background-color: #ef5350;
+        }
+
+        li {
+            width: fit-content;
+        }
+    </style>
+    <script>
+        function dragStart(event) {
+            //console.log("dragStart");
+
+            console.log(event.target.id);
+
+            event.dataTransfer.setData("text/plain", event.target.id);
+        }
+
+        function dragOver (event) {
+            //console.log("dragOver");
+
+            event.preventDefault();
+            event.dataTransfer.dropEffect = "move";
+            event.dataTransfer.effectAllowed = "move";
+        }
+
+        function drop(event) {
+            //console.log("drop");
+
+            event.preventDefault();
+
+            var data = event.dataTransfer.getData("text/plain");
+            var li = document.getElementById(data);
+
+            console.log(li);
+
+            var ul;
+
+            //console.log(event.target.id);
+            
+            if(event.target.id == "div1") {
+                ul = document.getElementById('filaEspera');
+            } else if (event.target.id == "div2") {
+                ul = document.getElementById('filaAtendimento');
+            }
+
+            ul.appendChild(document.getElementById(data));
+
+            // Clear the drag data cache (for all formats/types)
+            event.dataTransfer.clearData();
+
+        }
+    </script>
+</head>
+
+<body>
+    <main>
+        <h1>ADO 02</h1>
+
+        <section>
+            <a href="./ex1.html"><h2>Exercício 1</h2></a>
+            <p>Faça uma página de formulário contendo os seguintes campos e atendendo aos requisitos descritos abaixo.
+                Ao clicar no botão de submissão, uma nova aba deve ser aberta no navegador e os dados do formulário
+                devem ser mostrados nesta nova aba.</p>
+        </section>
+
+        <hr>
+
+        <section>
+            <a href="./ex2.html"><h2>Exercício 2</h2></a>
+            <p>Crie uma página que se comunica com o servidor websocket ('wss://echo.websocket.org'). A página deve
+                conter uma caixa de texto e um botão para enviar mensagens para o servidor. A conexão deve ser iniciada
+                digitando a palavra 'open' na caixa de texto. Todas as mensagens escritas na caixa de texto após a
+                conexão ser aberta devem ser enviadas para o servidor. Para fechar a conexão, a palavra a ser digitada
+                na caixa de texto é 'close'. A página deve conter também uma área de texto para receber e mostrar as
+                mensagens retornadas pelo servidor.</p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Exercício 3</h2>
+            <p>Crie uma página contendo uma lista com 10 nomes e duas áreas div: uma para atendimento e outra para
+                espera. A página deve permitir que os nomes da lista sejam arrastados para as divs.</p>
+            <ul>
+                <li id="Bruno" ondragstart="dragStart(event);" draggable="true">Bruno</li>
+                <li id="Camila" ondragstart="dragStart(event);" draggable="true">Camila</li>
+                <li id="Daniel" ondragstart="dragStart(event);" draggable="true">Daniel</li>
+                <li id="Estephanie" ondragstart="dragStart(event);" draggable="true">Estephanie</li>
+                <li id="Fernando" ondragstart="dragStart(event);" draggable="true">Fernando</li>
+                <li id="Gustavo" ondragstart="dragStart(event);" draggable="true">Gustavo</li>
+                <li id="Higor" ondragstart="dragStart(event);" draggable="true">Higor</li>
+                <li id="Israel" ondragstart="dragStart(event);" draggable="true">Israel</li>
+                <li id="Jackeline" ondragstart="dragStart(event);" draggable="true">Jackeline</li>
+                <li id="Kelly" ondragstart="dragStart(event);" draggable="true">Kelly</li>
+            </ul>
+            
+            <div ondragover="dragOver(event);" ondrop="drop(event);" id="div1" class="fila espera">
+                <h3>Fila de espera</h3>
+                <ul id="filaEspera">
+
+                </ul>
+            </div>
+            
+            <div ondragover="dragOver(event);" ondrop="drop(event);" id="div2" class="fila atendimento">
+                <h3>Fila de atendimento</h3>
+                <ul id="filaAtendimento">
+
+                </ul>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

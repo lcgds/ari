@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ADO 2</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+       textarea {
+            padding: 1rem;
+            background-color: #212121;
+            color: #66bb6a;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+    <script>
+        const conected = false;
+
+        document.addEventListener('load', function () {
+            const mensagem = document.getElementById('mensagem');
+            const resposta = document.getElementById('resposta');
+        });
+
+        let socket = new WebSocket('wss://echo.websocket.org');
+
+        socket.onmessage = function (evento) {
+            resposta.textContent = resposta.textContent + 'RESPOSTA RECEBIDA: ' + evento.data + '.\n\n';
+        }
+
+        socket.onerror = function (evento) {
+            resposta.textContent = resposta.textContent + 'ERRO NA CONEXÃO! \n\n';
+        }
+
+        socket.onclose = function (evento) {
+            resposta.textContent = resposta.textContent + 'CONEXÃO ENCERRADA! \n\n';
+        }
+
+        function send() {
+            if (this.conected === true) {
+                switch (mensagem.value) {
+                    case "close":
+                        socket.close();
+                        break;
+                    default:
+                        socket.send(mensagem.value);
+                        break;
+                }
+            } else if (mensagem.value == 'open') {
+                this.conected = true;
+                resposta.textContent = resposta.textContent + 'CONEXÃO ESTABELECIDA! \n\n';
+            } else {
+                resposta.textContent = resposta.textContent + 'SEM CONEXÃO! \n\n';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <main>
+        <h1>ADO 02</h1>
+
+        <section>
+            <a href="./ex1.html"><h2>Exercício 1</h2></a>
+            <p>Faça uma página de formulário contendo os seguintes campos e atendendo aos requisitos descritos abaixo.
+                Ao clicar no botão de submissão, uma nova aba deve ser aberta no navegador e os dados do formulário
+                devem ser mostrados nesta nova aba.</p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Exercício 2</h2>
+            <p>Crie uma página que se comunica com o servidor websocket ('wss://echo.websocket.org'). A página deve
+                conter uma caixa de texto e um botão para enviar mensagens para o servidor. A conexão deve ser iniciada
+                digitando a palavra 'open' na caixa de texto. Todas as mensagens escritas na caixa de texto após a
+                conexão ser aberta devem ser enviadas para o servidor. Para fechar a conexão, a palavra a ser digitada
+                na caixa de texto é 'close'. A página deve conter também uma área de texto para receber e mostrar as
+                mensagens retornadas pelo servidor.</p>
+
+            <input type="text" name="mensagem" id="mensagem" placeholder="Mensagem">
+
+            <button onclick="send()">Enviar mensagem</button><br><br>
+
+            <textarea name="resposta" id="resposta" placeholder="Console" cols="40" rows="5" disabled></textarea><br>
+        </section>
+
+        <hr>
+
+        <section>
+            <a href="./ex3.html"><h2>Exercício 3</h2></a>
+            <p>Crie uma página contendo uma lista com 10 nomes e duas áreas div: uma para atendimento e outra para
+                espera. A página deve permitir que os nomes da lista sejam arrastados para as divs.</p>
+        </section>
+    </main>
+</body>
+
+</html>
