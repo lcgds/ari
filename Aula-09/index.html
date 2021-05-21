@@ -36,14 +36,6 @@
             socket.close();
         }
     </script>
-    <style>
-        textarea {
-            padding: 1rem;
-            background-color: #212121;
-            color: #66bb6a;
-            font-family: 'Courier New', Courier, monospace;
-        }
-    </style>
 </head>
 <body>
     <h1>API de WebSocket</h1>
@@ -58,7 +50,7 @@
 
         <button onclick="send()">Enviar mensagem</button><br><br>
 
-        <textarea name="resposta" id="resposta" placeholder="Console" cols="40" rows="5" disabled></textarea><br><br>
+        <textarea class="console" name="resposta" id="resposta" placeholder="Console" cols="40" rows="5" disabled></textarea><br><br>
 
         <button onclick="end()">Fechar conexão</button>
     <hr>

@@ -6,10 +6,17 @@ hr {
     margin: 2.5rem 0;
 }
 
-input, label {
+input, label, textarea {
     display: block!important;
 }
 
-input {
+input, button {
     margin: 7.5px 0 20px 0;
+}
+
+.console {
+    padding: 1rem;
+    background-color: #212121;
+    color: #66bb6a;
+    font-family: 'Courier New', Courier, monospace;
 }

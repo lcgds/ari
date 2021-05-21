@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Workers</title>
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        const worker1 = new Worker('work2.js');
+        const worker2 = new Worker('work2.js');
+
+        function processar() {
+            let n1 = Number(document.getElementById('number1').value);
+            //console.log(n1);
+
+            let n2 = Number(document.getElementById('number2').value);
+            //console.log(n2);
+
+            worker1.postMessage(n1);
+            worker2.postMessage(n2);
+        }
+
+        worker1.addEventListener('message', output1);
+        worker2.addEventListener('message', output2);
+
+        function output1(event) {
+            let output = document.getElementById('output1');
+
+            output.textContent = event.data;
+        };
+
+        function output2(event) {
+            let output = document.getElementById('output2');
+
+            output.textContent = event.data;
+        };
+    </script>
+</head>
+<body>
+    <h1>Web Workers</h1>
+    <section>
+        <a href="./ex1.html">
+            <h2>Exercício 1</h2>
+        </a>
+        <p>
+            Crie uma página com um elemento input, um button e um output. Ao clicar no botão, envie o valor da caixa de texto para um web worker. O web worker deve devolver a palavra recebida com os caracteres em ordem invertida.
+        </p>
+    </section>
+    
+    <hr>
+
+    <section>
+        <a href="./ex2.html">
+            <h2>Exercício 2</h2>
+        </a>
+        <p>
+            Crie uma página contendo dois elementos input type="number", dois elementos de saída output e um button. Ao clicar no botão, envie os dados para um web worker (o valor de cada input deve ir para uma instância diferente do web worker). O web worker deve executar um loop X vezes, onde X é igual ao valor passado pelo input. Após executar o loop, o web worker deve retornar uma mensagem dizendo o número de vezes que ele executou o loop e a mensagem deve ser exibida nos elementos output.
+        </p>
+
+        <label for="number1">Número 1</label>
+        <input placeholder="Insira um número" min="1"  type="number" name="number" id="number1" required>
+        
+        <label for="number2">Número 2</label>
+        <input placeholder="Insira um número" min="1"  type="number" name="number" id="number2" required>
+
+        <button onclick="processar()">Processar</button>
+
+        <textarea class="console" id="output1" disabled>Output 1</textarea>
+        <textarea class="console" id="output2" disabled>Output 2</textarea>
+    </section>
+</body>
+</html>
