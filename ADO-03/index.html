@@ -16,15 +16,14 @@
   <!-- CSS -->
   <link rel="stylesheet" type='text/css' media='all' href="./static/css/webslides.css">
   <link rel="stylesheet" type="text/css" media="all" href="./static/css/material-icons.css">
+  <style>
+    .flexblock.activity li {
+      width: -webkit-fill-available!important;
+    }
+  </style>
 
   <!-- Favicons -->
-  <link rel="shortcut icon" sizes="16x16" href="./static/images/favicons/favicon.png">
-  <link rel="shortcut icon" sizes="32x32" href="./static/images/favicons/favicon-32.png">
-  <link rel="apple-touch-icon icon" sizes="76x76" href="./static/images/favicons/favicon-76.png">
-  <link rel="apple-touch-icon icon" sizes="120x120" href="./static/images/favicons/favicon-120.png">
-  <link rel="apple-touch-icon icon" sizes="152x152" href="./static/images/favicons/favicon-152.png">
-  <link rel="apple-touch-icon icon" sizes="180x180" href="./static/images/favicons/favicon-180.png">
-  <link rel="apple-touch-icon icon" sizes="192x192" href="./static/images/favicons/favicon-192.png">
+  <link rel="shortcut icon" sizes="48x48" href="./img/favicon.svg">
 
   <!-- Android -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -35,7 +34,7 @@
   <main role="main">
 
     <!-- Slides -->
-    <article id="webslides" class="vertical">
+    <article id="webslides">
 
       <section>
         <div class="wrap aligncenter fadeIn slow">
@@ -49,7 +48,7 @@
               Luiz Carlos Garrido de Souza
             </li>
             <li>
-              <img src="./img/fernando.jpeg" alt="Foto do integrante Luiz Fernando" class="avatar-80" title="Luiz Fernando">
+              <img src="./img/fernando.jpeg" alt="Foto do integrante Luiz Fernando" class="avatar-80">
               Luiz Fernando Morais Alves
             </li>
             <li>
@@ -70,6 +69,73 @@
         
         <div class="wrap">
           <h2>Sobre</h2>
+          <ul class="flexblock features">
+
+            <li>
+              <div>
+                <h2>
+                  <span class="material-icons">
+                    notifications_active
+                  </span>
+                  Notificações
+                </h2>
+                no nível do sistema
+              </div>
+            </li>
+
+            <li>
+              <div>
+                <h2>
+                  <span class="material-icons">
+                    devices_other
+                  </span>
+                  Aparência variável
+                </h2>
+                de acordo com o dispositivo
+              </div>
+            </li>
+
+            <li>
+              <div>
+                <h2>
+                  <span class="material-icons">
+                    settings
+                  </span>
+                  Permissão do usuário
+                </h2>
+                necessária
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        <footer>
+          <div class="alignright">
+            <img src="./img/luiz.jpg" alt="Foto do integrante Luiz Carlos" class="avatar-80" title="Luiz Carlos">
+          </div>
+        </footer>
+        
+      </section>
+
+      <section>
+        <header class="bg-black">
+            <span class="material-icons md-18">
+              notifications
+            </span>
+            <span class="text-subtitle">Notifications API</span>
+        </header>
+        
+        <div class="wrap grid sms vertical-align">
+          <div class="column">
+            <img src="./img/macOs.jpg" title="macOS">
+          </div>
+          <div class="column">
+            <img src="./img/notifications.png" title="Chrome e Android">
+          </div>
+          <div class="column">
+            <img src="./img/windows.png" title="Windows">
+          </div>
         </div>
 
         <footer>
@@ -89,7 +155,45 @@
         </header>
         
         <div class="wrap">
-          <h2>Para que serve</h2>
+          <h2>Compatibilidade com os navegadores desktop</h2>
+          <ul class="flexblock activity">
+            <li>
+              <div>
+                <span class="title">Chrome</span>
+                <span class="summary">22</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="title">Edge</span>
+                <span class="summary">14</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="title">Firefox</span>
+                <span class="summary">22</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="title">Internet Explorer</span>
+                <span class="summary">Não</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="title">Opera</span>
+                <span class="summary">25</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="title">Safari</span>
+                <span class="summary">7</span>
+              </div>
+            </li>
+          </ul>
         </div>
 
         <footer>
@@ -109,7 +213,45 @@
         </header>
         
         <div class="wrap">
-          <h2>Compatibilidade com os navegadores</h2>
+          <h2>Compatibilidade com os navegadores mobile</h2>
+          <ul class="flexblock activity">
+            <li>
+              <div>
+                <span class="title">Chrome</span>
+                <span class="summary">Sim</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="title">WebView Android</span>
+                <span class="summary">Não</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="title">Firefox</span>
+                <span class="summary">22</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="title">Samsung Internet</span>
+                <span class="summary">Sim</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="title">Opera</span>
+                <span class="summary">Sim</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="title">Safari</span>
+                <span class="summary">Não</span>
+              </div>
+            </li>
+          </ul>
         </div>
 
         <footer>
