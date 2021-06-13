@@ -54,23 +54,7 @@
         <div class="wrap aligncenter fadeIn slow">
           <p class="text-subtitle">Aplicações Ricas para Internet</p>
           <h1 class="text-landing">Notifications API</h1>
-          <hr>
-          <p class="text-intro aligncenter">Integrantes:</p>
-          <ul class="flexblock">
-            <li>
-              <img src="./img/luiz.jpg" alt="Foto do integrante Luiz Carlos" class="avatar-80"> 
-              Luiz Carlos Garrido de Souza
-            </li>
-            <li>
-              <img src="./img/fernando.jpeg" alt="Foto do integrante Luiz Fernando" class="avatar-80">
-              Luiz Fernando Morais Alves
-            </li>
-            <li>
-              <img src="./img/renan.jpeg" alt="Foto do integrante Renan Angusto" class="avatar-80">  
-              Renan Augusto da Silva
-            </li>
-          </ul>
-          </div>  
+        </div>  
       </section>
 
       <!-- Sobre a Notifications API -->
@@ -621,13 +605,7 @@ function fecharNotificacao() {
               <h2>Exemplo</h2>
               <pre>
 function notificarProva() {
-  const prova = new Notification('Aplicações Ricas para Internet', 
-  {
-    body: 'Prova amanhã', 
-    icon: './img/school.png', 
-    vibrate: [200, 100, 200], 
-    requireInteraction: true
-  });
+  const prova = new Notification('Aplicações Ricas para Internet', {body: 'Prova amanhã', icon: './img/school.png', vibrate: [200, 100, 200], requireInteraction: true});
 
   prova.onshow = () => {
     ar = document.getElementById('avisoRecebimento');
@@ -668,6 +646,16 @@ function notificarProva() {
           </div>
         </footer>
         
+      </section>
+
+      <!-- Dúvidas? -->
+      <section class="bg-apple">
+        <div class="wrap aligncenter fadeIn slow">
+          <p class="text-subtitle">Aplicações Ricas para Internet</p>
+          <h1 class="text-landing">Notifications API</h1>
+          <hr>
+          <h2 class="text-intro aligncenter">Dúvidas?</h2>
+          </div>  
       </section>
 
     </article>
