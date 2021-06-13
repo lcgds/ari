@@ -29,6 +29,10 @@
       font-weight: bold;
       color: #4444DD;
     }
+
+    #avisoRecebimento {
+      visibility: hidden;
+    }
   </style>
 
   <!-- Favicons -->
@@ -46,7 +50,7 @@
     <article id="webslides">
 
       <!-- Integrantes -->
-      <section>
+      <section class="bg-apple">
         <div class="wrap aligncenter fadeIn slow">
           <p class="text-subtitle">Aplicações Ricas para Internet</p>
           <h1 class="text-landing">Notifications API</h1>
@@ -70,7 +74,7 @@
       </section>
 
       <!-- Sobre a Notifications API -->
-      <section>
+      <section class="bg-apple">
         <header class="bg-black">
             <span class="material-icons md-18">
               notifications
@@ -159,7 +163,7 @@
       </section>
 
       <!-- Compatibilidade Parte 1 de 2 -->
-      <section>
+      <section class="bg-apple">
         <header class="bg-black">
             <span class="material-icons md-18">
               notifications
@@ -218,7 +222,7 @@
       </section>
 
       <!-- Compatibilidade Parte 2 de 2 -->
-      <section>
+      <section class="bg-apple">
         <header class="bg-black">
             <span class="material-icons md-18">
               notifications
@@ -325,7 +329,7 @@
       </section>
 
       <!-- 1. Checar compatiblidade -->
-      <section>
+      <section class="bg-apple">
         <header class="bg-black">
             <span class="material-icons md-18">
               notifications
@@ -366,7 +370,7 @@ function checarCompatibilidade() {
       </section>
 
       <!-- 2. Pedir permissão do usuário -->
-      <section>
+      <section class="bg-apple">
         <header class="bg-black">
             <span class="material-icons md-18">
               notifications
@@ -416,7 +420,7 @@ function pedirPermissao() {
       </section>
 
       <!-- 3. Enviar notificação -->
-      <section>
+      <section class="bg-apple">
         <header class="bg-black">
             <span class="material-icons md-18">
               notifications
@@ -458,7 +462,7 @@ function enviarNotificacao() {
       </section>
 
       <!-- 4. Fechar notificação -->
-      <section>
+      <section class="bg-apple">
         <header class="bg-black">
             <span class="material-icons md-18">
               notifications
@@ -504,8 +508,8 @@ function fecharNotificacao() {
         
       </section>
 
-      <!-- Exemplo -->
-      <section>
+      <!-- Especificações Parte 1 de 2 -->
+      <section class="bg-apple">
         <header class="bg-black">
             <span class="material-icons md-18">
               notifications
@@ -514,7 +518,148 @@ function fecharNotificacao() {
         </header>
         
         <div class="wrap">
-          <h2>Exemplo</h2>
+          <h2>Especificações</h2>
+          <ul class="flexblock specs border">
+
+            <h3>Constructor</h3>
+            <li>
+              <div>
+                <h2>Notification()</h2>
+                Cria uma nova instância do objeto Notification.
+              </div>
+            </li>
+
+            <hr>
+            <h3>Propriedades estáticas</h3>
+            <li>
+              <div>
+                <h2>Notification.permission</h2>
+                Retorna a permissão atual para exibir notificações.
+              </div>
+            </li>
+
+            <hr>
+            <h3>Propriedades da instância</h3>
+            <li>
+              <div>
+                <h2>Notification.title, Notification.body, etc.</h2>
+                Retorna propriedades de instâncias do objeto Notification.
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <footer>
+          <div class="alignright">
+            <img src="./img/luiz.jpg" alt="Foto do integrante Luiz Carlos" class="avatar-80" title="Luiz Carlos">
+          </div>
+        </footer>
+        
+      </section>
+
+      <!-- Especificações Parte 2 de 2 -->
+      <section class="bg-apple">
+        <header class="bg-black">
+            <span class="material-icons md-18">
+              notifications
+            </span>
+            <span class="text-subtitle">Notifications API</span>
+        </header>
+        
+        <div class="wrap">
+          <h2>Especificações</h2>
+          <ul class="flexblock specs border">
+
+            <h3>Métodos estáticos</h3>
+            <li>
+              <div>
+                <h2>Notification.requestPermission()</h2>
+                Solicita a permissão do usuário para exibir notificações.
+              </div>
+            </li>
+
+            <hr>
+            <h3>Metódos de instância</h3>
+            <li>
+              <div>
+                <h2>Notification.close()</h2>
+                Programaticamente fecha uma notificação.
+              </div>
+            </li>
+
+            <hr>
+            <h3>Manipuladores de evento</h3>
+            <li>
+              <div>
+                <h2>Notification.onshow, onclick, onclose e onerror.</h2>
+                O manipulador para o evento é acionado cada vez que o usuário interage com a notificação.
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <footer>
+          <div class="alignright">
+            <img src="./img/luiz.jpg" alt="Foto do integrante Luiz Carlos" class="avatar-80" title="Luiz Carlos">
+          </div>
+        </footer>
+        
+      </section>
+
+      <!-- Exemplo -->
+      <section class="bg-apple">
+        <header class="bg-black">
+            <span class="material-icons md-18">
+              notifications
+            </span>
+            <span class="text-subtitle">Notifications API</span>
+        </header>
+        
+        <div class="wrap">
+          <div class="grid vertical-align">
+            <div class="column">
+              <h2>Exemplo</h2>
+              <pre>
+function notificarProva() {
+  const prova = new Notification('Aplicações Ricas para Internet', 
+  {
+    body: 'Prova amanhã', 
+    icon: './img/school.png', 
+    vibrate: [200, 100, 200], 
+    requireInteraction: true
+  });
+
+  prova.onshow = () => {
+    ar = document.getElementById('avisoRecebimento');
+    ar.style.visibility = 'visible';
+  };
+
+  prova.onclick = () => {
+    window.open('https://senacsp.blackboard.com/');
+  }
+
+  prova.onerror = () => {
+    alert('Erro ao tentar exibir a notificação!');
+  }
+
+  prova.onclose = () => {
+    alert('Cuidado para não se esquecer da prova!');
+  }
+}
+              </pre>
+            </div>
+
+            <div class="column">
+              <fieldset onclick="notificarProva();">
+                <legend>Chat</legend>
+                <h4>Professor enviou:</h4>
+                <span>Prova surpresa amanhã!</span>
+                <hr>
+                <h4 id="avisoRecebimento">Renan recebeu a notificação.</h4>
+              </fieldset>
+            </div>
+
+          </div>
         </div>
 
         <footer>
@@ -584,6 +729,27 @@ function fecharNotificacao() {
           if (document.visibilityState === 'hidden') {
             notificacao.close();
           }}); 
+      }
+    
+      function notificarProva() {
+        const prova = new Notification('Aplicações Ricas para Internet', {body: 'Prova amanhã', icon: './img/school.png', vibrate: [200, 100, 200], requireInteraction: true});
+
+        prova.onshow = () => {
+          ar = document.getElementById('avisoRecebimento');
+          ar.style.visibility = 'visible';
+        };
+
+        prova.onclick = () => {
+          window.open('https://senacsp.blackboard.com/');
+        }
+
+        prova.onerror = () => {
+          alert('Erro ao tentar exibir a notificação!');
+        }
+
+        prova.onclose = () => {
+          alert('Cuidado para não se esquecer da prova!');
+        }
       }
     </script>
   </div>
