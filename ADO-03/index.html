@@ -20,6 +20,15 @@
     .flexblock.activity li {
       width: -webkit-fill-available!important;
     }
+
+    .card-50 {
+      min-height: 626px;
+    }
+
+    .codeFocus {
+      font-weight: bold;
+      color: #4444DD;
+    }
   </style>
 
   <!-- Favicons -->
@@ -36,6 +45,7 @@
     <!-- Slides -->
     <article id="webslides">
 
+      <!-- Integrantes -->
       <section>
         <div class="wrap aligncenter fadeIn slow">
           <p class="text-subtitle">Aplicações Ricas para Internet</p>
@@ -59,6 +69,7 @@
           </div>  
       </section>
 
+      <!-- Sobre a Notifications API -->
       <section>
         <header class="bg-black">
             <span class="material-icons md-18">
@@ -118,6 +129,7 @@
         
       </section>
 
+      <!-- Fotos de Notificações -->
       <section>
         <header class="bg-black">
             <span class="material-icons md-18">
@@ -146,6 +158,7 @@
         
       </section>
 
+      <!-- Compatibilidade Parte 1 de 2 -->
       <section>
         <header class="bg-black">
             <span class="material-icons md-18">
@@ -204,6 +217,7 @@
         
       </section>
 
+      <!-- Compatibilidade Parte 2 de 2 -->
       <section>
         <header class="bg-black">
             <span class="material-icons md-18">
@@ -262,6 +276,7 @@
         
       </section>
 
+      <!-- Como usar -->
       <section>
         <header class="bg-black">
             <span class="material-icons md-18">
@@ -274,6 +289,33 @@
           <h2>Como usar</h2>
         </div>
 
+        <ol class="flexblock steps">
+          <li>
+            <span class="material-icons">
+              check
+            </span>
+            <h3>1. Checar compatibilidade</h3>
+          </li>
+          <li>
+            <span class="material-icons">
+              sentiment_satisfied
+            </span>
+            <h3>2. Pedir permissão do usuário</h3>
+          </li>
+          <li>
+            <span class="material-icons">
+              send
+            </span>
+            <h3>3. Enviar notificação</h3>
+          </li>
+          <li>
+            <span class="material-icons">
+              clear
+            </span>
+            <h3>4. Fechar notificações</h3>
+          </li>
+        </ol>
+
         <footer>
           <div class="alignright">
             <img src="./img/fernando.jpeg" alt="Foto do integrante Luiz Fernando" class="avatar-80" title="Luiz Fernando">
@@ -282,6 +324,187 @@
         
       </section>
 
+      <!-- 1. Checar compatiblidade -->
+      <section>
+        <header class="bg-black">
+            <span class="material-icons md-18">
+              notifications
+            </span>
+            <span class="text-subtitle">Notifications API</span>
+        </header>
+        
+        <div class="wrap">
+          <div class="card-50 bg-white">
+            <figure>
+              <img src="./img/cookie-the-pom-SNf-hZz6zOY-unsplash1.jpg" alt="Pomeranian working on an iPad">
+            </figure>
+            <div class="flex-content">
+              <h3 class="hidden">Checar compatibilidade</h3>
+              <pre>
+function checarCompatibilidade() {
+  if (!(<span class="codeFocus">"Notification" in window</span>)) {
+    alert("Este navegador não é compatível com a API de Notificações");
+  } else {
+    alert("Este navegador é compatível com a API de Notificações");
+    // Continuar desenvolvimento
+  }
+}
+</pre>
+              <button class="button" onclick="checarCompatibilidade();">Checar compatibilidade</button>
+            </div>
+          </div>
+        </div>
+
+        
+
+        <footer>
+          <div class="alignright">
+            <img src="./img/fernando.jpeg" alt="Foto do integrante Luiz Fernando" class="avatar-80" title="Luiz Fernando">
+          </div>
+        </footer>
+        
+      </section>
+
+      <!-- 2. Pedir permissão do usuário -->
+      <section>
+        <header class="bg-black">
+            <span class="material-icons md-18">
+              notifications
+            </span>
+            <span class="text-subtitle">Notifications API</span>
+        </header>
+        
+        <div class="wrap">
+          <div class="card-50 bg-white">
+            <figure>
+              <img src="./img/cookie-the-pom-siNDDi9RpVY-unsplash2.jpg" alt="Pomeranian working on an iPad">
+            </figure>
+            <div class="flex-content">
+              <h3 class="hidden">Pedir permissão do usuário</h3>
+              <pre>
+function pedirPermissao() {
+  <span class="codeFocus">Notification.requestPermission()</span>.then( () => {
+      switch (Notification.permission) {
+      case 'denied':
+        // O usuário se recusa a receber notificações
+        alert('denied');
+        break;
+      case 'granted':
+        // O usuário aceita receber notificações
+        alert('granted');
+        break;
+      case 'default':
+        // A resposta do usuário é desconhecida e por isso o navegador irá presumir que a permissão não foi concedida
+        break;
+    }
+  });
+}
+</pre>
+              <button class="button" onclick="pedirPermissao();">Pedir permissão</button>
+            </div>
+          </div>
+        </div>
+
+        
+
+        <footer>
+          <div class="alignright">
+            <img src="./img/fernando.jpeg" alt="Foto do integrante Luiz Fernando" class="avatar-80" title="Luiz Fernando">
+          </div>
+        </footer>
+        
+      </section>
+
+      <!-- 3. Enviar notificação -->
+      <section>
+        <header class="bg-black">
+            <span class="material-icons md-18">
+              notifications
+            </span>
+            <span class="text-subtitle">Notifications API</span>
+        </header>
+        
+        <div class="wrap">
+          <div class="card-50 bg-white">
+            <figure>
+              <img src="./img/cookie-the-pom-gySMaocSdqs-unsplash3.jpg" alt="Pomeranian working on an iPad">
+            </figure>
+            <div class="flex-content">
+              <h3 class="hidden">Enviar notificação</h3>
+              <pre>
+function enviarNotificacao() {
+  let notificacao = <span class="codeFocus">new Notification</span>('DevDog', 
+  {
+    body: 'Au au',
+    icon: './img/pet.png',
+    vibrate: [200, 100, 200],
+    requireInteraction: true
+  });
+}
+              </pre>
+              <button class="button" onclick="enviarNotificacao();">Enviar notificação</button>
+            </div>
+          </div>
+        </div>
+
+        
+
+        <footer>
+          <div class="alignright">
+            <img src="./img/fernando.jpeg" alt="Foto do integrante Luiz Fernando" class="avatar-80" title="Luiz Fernando">
+          </div>
+        </footer>
+        
+      </section>
+
+      <!-- 4. Fechar notificação -->
+      <section>
+        <header class="bg-black">
+            <span class="material-icons md-18">
+              notifications
+            </span>
+            <span class="text-subtitle">Notifications API</span>
+        </header>
+        
+        <div class="wrap">
+          <div class="card-50 bg-white">
+            <figure>
+              <img src="./img/cookie-the-pom-gySMaocSdqs-unsplash3.jpg" alt="Pomeranian working on an iPad">
+            </figure>
+            <div class="flex-content">
+              <h3 class="hidden">Fechar notificações</h3>
+              <pre>
+function fecharNotificacao() {
+  const notificacao = new Notification('DevDog', {body: 'Au au', icon: './img/pet.png', vibrate: [200, 100, 200], requireInteraction: true});
+
+  // Se a página for recarregada, então feche a notificação
+  window.onunload = () => {
+    <span class="codeFocus">notificacao.close();</span>
+  }
+
+  // Se o usuário deixar de visualizar a página, então feche a notificação
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') {
+      <span class="codeFocus">notificacao.close();</span>
+    }}); 
+}
+              </pre>
+              <button class="button" onclick="fecharNotificacao();">Fechar notificações</button>
+            </div>
+          </div>
+        </div>
+
+        
+
+        <footer>
+          <div class="alignright">
+            <img src="./img/fernando.jpeg" alt="Foto do integrante Luiz Fernando" class="avatar-80" title="Luiz Fernando">
+          </div>
+        </footer>
+        
+      </section>
+
+      <!-- Exemplo -->
       <section>
         <header class="bg-black">
             <span class="material-icons md-18">
@@ -310,6 +533,58 @@
     <script src="./static/js/webslides.js"></script>
     <script>
       window.ws = new WebSlides();
+
+      function checarCompatibilidade() {
+        if (!("Notification" in window)) {
+          alert("Este navegador não é compatível com a API de Notificações");
+        } else {
+          alert("Este navegador é compatível com a API de Notificações");
+          // Continuar desenvolvimento
+        }
+      }
+
+      function pedirPermissao() {
+        Notification.requestPermission().then( () => {
+            switch (Notification.permission) {
+            case 'denied':
+              // O usuário se recusa a receber notificações
+              alert('denied');
+              break;
+            case 'granted':
+              // O usuário aceita receber notificações
+              alert('granted');
+              break;
+            case 'default':
+              // A resposta do usuário é desconhecida e por isso o navegador irá presumir que a permissão não foi concedida
+              break;
+          }
+        });
+      }
+
+      function enviarNotificacao() {
+        const notificacao = new Notification('DevDog', 
+        {
+          body: 'Au au',
+          icon: './img/pet.png',
+          vibrate: [200, 100, 200],
+          requireInteraction: true
+        });
+      }
+
+      function fecharNotificacao() {
+        const notificacao = new Notification('DevDog', {body: 'Au au', icon: './img/pet.png', vibrate: [200, 100, 200], requireInteraction: true});
+
+        // Se a página for recarregada, então feche a notificação
+        window.onunload = () => {
+          notificacao.close();
+        }
+
+        // Se o usuário deixar de visualizar a página, então feche a notificação
+        document.addEventListener('visibilitychange', () => {
+          if (document.visibilityState === 'hidden') {
+            notificacao.close();
+          }}); 
+      }
     </script>
   </div>
 
